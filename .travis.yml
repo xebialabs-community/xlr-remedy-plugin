@@ -1,0 +1,11 @@
+language: java
+sudo: false
+deploy:
+  provider: releases
+  api_key:
+    secure: QSd3q5uf09GvliSX/QA7BEt5BRki7rQMsjAOuXWlVG5vFHre/efUuYlrTvaVIP1Vp8/4gx3vq748eOHyuo682Jtz5udPI4jy2B4Ec8LZEaQJwnjqYeKTNEKKQEvZ65abik9m+GR3IfNDH9K1pVn58Bz52GCnE276Hts+47Nu4cWMVR7rgwGWFZDXjBkJW741X8QTmCzTcoqfdTuNHiTsOLpbf2THkQSEm0ZEjbv6obM0qoCCHhGa8S0kvWqh/HiBsUmk97zagtHOj7jduwtWS9prgOtHtNbdLYY0i6U24f+zHpuY2SL/rGIXGgpfPk3Gy2xImMhiiWSUFVQvf+EqQsMFxgJRYt+Csx0wVaR0mzaivQic7jiHCXUtEAqnGilyRvBmzJLU28ngKFMob9VlTuIUXbYHMKbRh405QhdTy80mdUb3sr9GsPVQu1q3feJenTmyyaypKCzgCCz9LO8gGoV9fxDBPKscmdIBOLzGRmCmcPWe+JTBj65XMrq2UudqBgWTOKlFErQ+eOKcEZN23CYthmuLzy5p8wDiSNO5Q0uStBXiN1Z38bW7XUOTxPD7L2qPCOVuxt9c94z68e48CaSrawUQ3y3tuauEZH/7DnYxJoq+ba2pmI/qsYw3KD+BZpzDnyV76WosItbZzZen0oYTYRH6mN8MArR23z0XsLU=
+  file: build/libs/*.jar
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: xebialabs-community/xlr-remedy-plugin
