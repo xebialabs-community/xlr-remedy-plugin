@@ -48,3 +48,7 @@ The XL Release Remedy plugin enables you interact with BMC Remedy services.
 
 * Download the latest plugin version JAR from the `releases`.
 * Follow the guide [here](https://docs.xebialabs.com/xl-release/how-to/install-or-remove-xl-release-plugins.html)
+
+## Testing ##
+
+This plugin comes with a Flask container with a stub for BMC Remedy so it can be tested in isolation. If you run `./gradlew clean runDockerCompose` a XL Release container will be started together with the Stub. The will be a Remedy template loaded that has all tasks set up. These tasks can all run successfully against the stub. Please make sure you update the tests and the code when updating this plugin.
