@@ -21,7 +21,7 @@ def getFile( fileName, status="200" ):
      filePath = "/remedy-stub/responses/%s" % fileName
      if not os.path.isfile(filePath):
         raise AuthError({"code": "response_file_not_found", "description": "Unable to load response file"}, 500)
-     
+
      f = io.open(filePath, "r", encoding="utf-8")
 
      resp = make_response( (f.read(), status) )
@@ -36,7 +36,7 @@ def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = get_token_auth_header()
-        if token != "DUMMY_TOKEN": 
+        if token != "DUMMY_TOKEN":
           raise AuthError({"code": "invalid_header", "description": "Unable to find appropriate key"}, 400)
         return f(*args, **kwargs)
     

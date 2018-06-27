@@ -8,9 +8,7 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-import sys
-import urllib
-import operator
+import sys, urllib, operator
 import com.xhaus.jyson.JysonCodec as json
 from xlrelease.HttpRequest import HttpRequest
 
@@ -25,10 +23,10 @@ class RemedyClient(object):
         self.headers        = {}
         self.accessToken    = None
         self.httpConnection = httpConnection
-        
+
         self.username = username if username else httpConnection['username']
         self.password = password if password else httpConnection['password']
-    
+
         self.httpRequest = HttpRequest(self.httpConnection, username, password)
 
         self.issue_token()
@@ -61,7 +59,7 @@ class RemedyClient(object):
         CHG:CRQ:Worklog - for work Info/log
         HPD:INC:Worklog - for Incident work log
         '''
-        entrys = self.query_entrys('User', '')
+        self.query_entrys('User', '')
 
     # https://docs.bmc.com/docs/pages/releaseview.action?pageId=517036472#id-/entry/{formName}-Createanentry
     def create_entry(self, form_name, form_data):
@@ -100,7 +98,7 @@ class RemedyClient(object):
     # https://docs.bmc.com/docs/pages/releaseview.action?pageId=517036478#id-/entry/{formName}/{entryId}-Getsingleentry
     def get_entry(self, form_name, entry_id):
         # example: /api/arsys/v1/entry/SimpleForm/000000000000103
-        remedy_api_url = '%s/%s/%s' % (URI_PREFIX, form_name, entry_id) 
+        remedy_api_url = '%s/%s/%s' % (URI_PREFIX, form_name, entry_id)
         response = self.httpRequest.get(remedy_api_url, contentType='application/json; charset=utf-8', headers = self.headers)
 
         if response.getStatus() == RESULT_STATUS:

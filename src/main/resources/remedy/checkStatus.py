@@ -9,8 +9,6 @@
 #
 
 
-import sys, time
-import com.xhaus.jyson.JysonCodec as json
 from remedy.RemedyClient import RemedyClient
 
 if remedyServer is None:
