@@ -39,7 +39,7 @@ def requires_auth(f):
         if token != "DUMMY_TOKEN":
           raise AuthError({"code": "invalid_header", "description": "Unable to find appropriate key"}, 400)
         return f(*args, **kwargs)
-    
+
     return decorated
 
 @app.route('/')

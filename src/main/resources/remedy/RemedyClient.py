@@ -40,7 +40,7 @@ class RemedyClient(object):
         api_url = '/api/jwt/login';
         form_data = urllib.urlencode({'username': self.username, 'password': self.password});
         response = self.httpRequest.post(api_url, body=form_data, contentType='application/x-www-form-urlencoded', headers = {'Accept': 'text/plain'})
-        
+
         if response.getStatus() != RESULT_STATUS:
             self.throw_error(response)
 
