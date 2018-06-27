@@ -1,0 +1,344 @@
+[{
+    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef",
+    "type":"xlrelease.Release",
+    "title":"Remedy",
+    "scheduledStartDate":"2018-06-27T15:00:00Z",
+    "flagStatus":"OK",
+    "overdueNotified":false,
+    "maxConcurrentReleases":100,
+    "releaseTriggers":[
+
+    ],
+    "teams":[
+        {
+            "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Team15b97900a1124de58f543e33ee3a198c",
+            "type":"xlrelease.Team",
+            "teamName":"Release Admin",
+            "members":[
+
+            ],
+            "roles":[
+
+            ],
+            "permissions":[
+                "release#edit",
+                "release#lock_task",
+                "release#start",
+                "release#reassign_task",
+                "release#edit_blackout",
+                "template#view",
+                "release#edit_security",
+                "release#abort",
+                "release#view",
+                "release#edit_task"
+            ]
+        },
+        {
+            "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Team1da18e513f69455590362cc57ad857c4",
+            "type":"xlrelease.Team",
+            "teamName":"Template Owner",
+            "members":[
+                "admin"
+            ],
+            "roles":[
+
+            ],
+            "permissions":[
+                "template#edit",
+                "template#lock_task",
+                "template#view",
+                "template#edit_triggers",
+                "template#edit_security",
+                "template#create_release"
+            ]
+        }
+    ],
+    "memberViewers":[
+
+    ],
+    "roleViewers":[
+
+    ],
+    "attachments":[
+
+    ],
+    "phases":[
+        {
+            "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+            "type":"xlrelease.Phase",
+            "title":"New Phase",
+            "flagStatus":"OK",
+            "overdueNotified":false,
+            "tasks":[
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task1df0e5dabda34388ad202f984e0efc88",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Check Status",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task1df0e5dabda34388ad202f984e0efc88/PythonScript",
+                        "type":"remedy.checkStatus",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task1df0e5dabda34388ad202f984e0efc88",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "entryId":"000000000000103"
+                    }
+                },
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task66f6027d97744f59a693f728243f01e7",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Create Entry",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task66f6027d97744f59a693f728243f01e7/PythonScript",
+                        "type":"remedy.createEntry",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task66f6027d97744f59a693f728243f01e7",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "formData":"{\n    \"Short Description\": \"testing 123ç\"\n}"
+                    }
+                },
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task3876d7925c734c62846907c4df0dd03c",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Find Entry",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task3876d7925c734c62846907c4df0dd03c/PythonScript",
+                        "type":"remedy.findEntryById",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task3876d7925c734c62846907c4df0dd03c",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "entryId":"000000000000103"
+                    }
+                },
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task7446bfafe37244c495338bde0991097d",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Query Entries",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task7446bfafe37244c495338bde0991097d/PythonScript",
+                        "type":"remedy.queryEntries",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Task7446bfafe37244c495338bde0991097d",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "query":"blank"
+                    }
+                },
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskc1e50dcd98d7489ebf9841bec506c8bb",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Update Entry",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskc1e50dcd98d7489ebf9841bec506c8bb/PythonScript",
+                        "type":"remedy.updateEntry",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskc1e50dcd98d7489ebf9841bec506c8bb",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "entryId":"000000000000103",
+                        "formData":"{\n    \"Short Description\": \"testing 123çå\"\n}"
+                    }
+                },
+                {
+                    "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskd2e35d3510f14d809a1f2d6696be7af3",
+                    "type":"xlrelease.CustomScriptTask",
+                    "title":"Polling Check Status",
+                    "flagStatus":"OK",
+                    "overdueNotified":false,
+                    "comments":[
+
+                    ],
+                    "container":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066",
+                    "attachments":[
+
+                    ],
+                    "status":"PLANNED",
+                    "waitForScheduledStartDate":true,
+                    "delayDuringBlackout":false,
+                    "postponedDueToBlackout":false,
+                    "hasBeenFlagged":false,
+                    "hasBeenDelayed":false,
+                    "failuresCount":0,
+                    "variableMapping":{
+
+                    },
+                    "tags":[
+
+                    ],
+                    "dueSoonNotified":false,
+                    "locked":false,
+                    "watchers":[
+
+                    ],
+                    "pythonScript":{
+                        "id":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskd2e35d3510f14d809a1f2d6696be7af3/PythonScript",
+                        "type":"remedy.pollingCheckStatus",
+                        "customScriptTask":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef/Phase751961d8ed884a788de8377f68d87066/Taskd2e35d3510f14d809a1f2d6696be7af3",
+                        "remedyServer":"Configuration/Custom/remedy",
+                        "formName":"SimpleForm",
+                        "entryId":"000000000000103",
+                        "pollInterval":3,
+                        "checkForStatus":"Approved"
+                    }
+                }
+            ],
+            "release":"Applications/Releaseab89f63f44f842e38a0a826a457b58ef",
+            "status":"PLANNED"
+        }
+    ],
+    "queryableStartDate":"2018-06-27T15:00:00Z",
+    "realFlagStatus":"OK",
+    "status":"TEMPLATE",
+    "tags":[
+
+    ],
+    "variables":[
+
+    ],
+    "calendarPublished":false,
+    "tutorial":false,
+    "abortOnFailure":false,
+    "allowConcurrentReleasesFromTrigger":true,
+    "runningTriggeredReleasesCount":0,
+    "createdFromTrigger":false,
+    "extensions":[
+
+    ],
+    "autoStart":false,
+    "automatedResumeCount":0,
+    "riskScore":"000",
+    "totalRiskScore":"0000",
+    "riskProfile":"Configuration/riskProfiles/RiskProfileDefault"
+}]

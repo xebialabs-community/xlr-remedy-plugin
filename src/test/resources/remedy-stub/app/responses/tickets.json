@@ -1,0 +1,54 @@
+{
+    "entries": [
+      {
+        "values": {
+          "Request ID": "000000000000103",
+          "Submitter": "Allen",
+          "Create Date": "2014-12-03T22:53:37.000+0000",
+          "Assigned To": null,
+          "Last Modified By": "chris",
+          "Modified Date": "2014-12-03T22:53:37.000+0000",
+          "Status": "New",
+          "Short Description": "testing 123ç",
+          "Status History": {
+            "New": {
+              "user": "chris",
+              "timestamp": "2014-12-03T22:53:37.000+0000"
+            }
+          }
+        },
+        "_links": {
+          "self": [
+            {
+              "href": "http://localhost:8008/api/arsys/v1/entry/SimpleForm/000000000000103"
+            }
+          ]
+        }
+      },
+      {
+        "values": {
+          "Request ID": "000000000000104",
+          "Submitter": "Pete",
+          "Create Date": "2014-12-03T22:53:37.000+0000",
+          "Assigned To": null,
+          "Last Modified By": "bob",
+          "Modified Date": "2014-12-03T22:53:37.000+0000",
+          "Status": "New",
+          "Short Description": "testing 456",
+          "Status History": {
+            "New": {
+              "user": "bob",
+              "timestamp": "2014-12-03T22:53:37.000+0000"
+            }
+          }
+        },
+        "_links": {
+          "self": [
+            {
+              "href": "http://localhost:8008/api/arsys/v1/entry/SimpleForm/000000000000103"
+            }
+          ]
+        }
+      }
+    ]
+}

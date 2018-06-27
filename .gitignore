@@ -1,0 +1,15 @@
+# use glob syntax.
+syntax: glob
+.gradle/
+
+# Build output
+build/
+
+# Mac
+.DS_Store
+
+plugin_context.md
+node_modules
+supervisord.*
+.idea
+*.pyc
