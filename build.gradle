@@ -26,10 +26,10 @@ license {
 }
 
 xlDocker {
-  compileImage = 'xebialabs/xlr_dev_compile'
-  compileVersion = 'v8.0.0.1'
-  runImage = 'xebialabs/xlr_dev_run'
-  runVersion = 'v8.0.0.2'
+  compileImage = 'xebialabsunsupported/xlr_dev_compile'
+  compileVersion = '8.5.4'
+  runImage = 'xebialabsunsupported/xlr_dev_run'
+  runVersion = '8.5.4'
   runPortMapping = '15516:5516'
 }
 
