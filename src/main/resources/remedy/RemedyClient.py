@@ -26,8 +26,12 @@ class RemedyClient(object):
 
         self.username = username if username else httpConnection['username']
         self.password = password if password else httpConnection['password']
+        
+        # clear username/password so underlying library doesn't try to do basic authentication
+        del httpConnection['username']
+        del httpConnection['password']
 
-        self.httpRequest = HttpRequest(self.httpConnection, username, password)
+        self.httpRequest = HttpRequest(self.httpConnection)
 
         self.issue_token()
 
