@@ -78,7 +78,7 @@
 
         <property name="formName" category="input" label="Form Name" required="true"/>
         <property name="entryId" category="input" label="Entry Id" required="true"/>
-        <property name="statusField" category="input" label="Status Field" default="Status" hidden="true"/>
+        <property name="statusField" category="input" label="Status Field" default="Status" description="Name of the Status field for this form"/>
 
         <property name="status" category="output"/>
     </type>
@@ -88,7 +88,7 @@
 
         <property name="formName" category="input" label="Form Name" default="CHG:ChangeInterface" required="true"/>
         <property name="entryId" category="input" label="Entry Id" required="true"/>
-        <property name="statusField" category="input" label="Status Field" default="Status" hidden="true"/>
+        <property name="statusField" category="input" label="Status Field" default="Status" description="Name of the Status field for this form"/>
 
         <property name="pollInterval" category="input" kind="integer" label="Polling Interval" required="true" default="30"/>
         <property name="checkForStatus" category="input" label="Status Value to check for" required="true"/>
