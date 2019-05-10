@@ -17,6 +17,10 @@ if remedyServer is None:
 client = RemedyClient.create_client(remedyServer, username, password)
 
 data = client.get_entry(formName, entryId)
-status = data[statusField]
 
+if statusField not in data:
+    sys.exit("Field [%s] not found in entry data [%s]" % (statusField, data))
+    
+status = data[statusField]
 print "Found %s in Remedy with status %s" % (entryId, status)
+
