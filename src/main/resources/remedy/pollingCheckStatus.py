@@ -26,11 +26,14 @@ data = None
 
 while True:
     data = client.get_entry(formName, entryId)
+    
+    if statusField not in data:
+        print "Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, data['Request ID'], str(data)))
+    else:
+        status = data[statusField]
 
-    status = data[statusField]
-
-    print "Found [%s] in Remedy with status: [%s] Looking for %s\n" % (data['Request ID'], status, checkForStatus)
-    if status == checkForStatus:
-        break
+        print "Found entry [%s] with statusField value: [%s]. Looking for value [%s].\n" % (data['Request ID'], status, checkForStatus)
+        if status == checkForStatus:
+            break
 
     time.sleep(pollInterval)
