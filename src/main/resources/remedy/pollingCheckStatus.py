@@ -28,7 +28,7 @@ while True:
     data = client.get_entry(formName, entryId)
     
     if statusField not in data:
-        print "Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, data['Request ID'], str(data)))
+        print "Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, data['Request ID'], str(data))
     else:
         status = data[statusField]
 
