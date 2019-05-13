@@ -9,6 +9,7 @@
 #
 
 from remedy.RemedyClient import RemedyClient
+import com.xhaus.jyson.JysonCodec as json
 
 if formName is None:
     sys.exit("No form name provided.")
