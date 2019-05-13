@@ -20,7 +20,6 @@ if entryId is None:
 client = RemedyClient.create_client(remedyServer, username, password)
 
 formData = client.get_entry( formName, entryId )
-jsonObj = json.loads(formData)
-changeId = json.dumps(jsonObj['values']['Infrastructure Change Id'])
+changeId = json.dumps(formData['Infrastructure Change Id'])
 changeId = changeId.strip('\"')
 print "Change ID from the Form Data is: %s " % changeId
