@@ -9,6 +9,7 @@
 #
 
 from remedy.RemedyClient import RemedyClient
+import com.xhaus.jyson.JysonCodec as json
 
 if formName is None:
     sys.exit("No form name provided.")
@@ -19,3 +20,6 @@ if entryId is None:
 client = RemedyClient.create_client(remedyServer, username, password)
 
 formData = client.get_entry( formName, entryId )
+changeId = json.dumps(formData['Infrastructure Change Id'])
+changeId = changeId.strip('\"')
+print "Change ID from the Form Data is: %s " % changeId

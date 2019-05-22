@@ -58,9 +58,9 @@
     <type type="remedy.findEntryById" extends="remedy.Task">
         <property name="scriptLocation" default="remedy/getEntry.py" hidden="true"/>
 
-        <property name="formName" category="input" label="Form Name" default="CHG:ChangeInterface" required="true"/>
+        <property name="formName" category="input" label="Form Name" default="CHG:ChangeInterface_Create" required="true"/>
         <property name="entryId" category="input" label="Entry Id" required="true"/>
-
+        <property name="changeId" category="output"/>
         <property name="formData" category="output"/>
     </type>
 
