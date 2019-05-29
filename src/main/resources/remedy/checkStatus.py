@@ -16,7 +16,13 @@ if remedyServer is None:
 
 client = RemedyClient.create_client(remedyServer, username, password)
 
-data = client.get_entry(formName, entryId)
+if matchChangId:
+    print "Matching Change Request ID: %s" % entryId
+    data = client.get_change_request(formName, entryId)
+
+else:
+    print "Matching Entry ID: %s" % entryId
+    data = client.get_entry(formName, entryId)
 
 if statusField not in data:
     sys.exit("Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, data['Request ID'], str(data)))
