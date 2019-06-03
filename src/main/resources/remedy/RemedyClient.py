@@ -121,9 +121,9 @@ class RemedyClient(object):
         response = self.httpRequest.get(remedy_api_url, contentType='application/json; charset=utf-8', headers = self.headers)
 
         if response.getStatus() == RESULT_STATUS:
-            data = json.loads(response.getResponse())
+            data = json.loads(response.getResponse())['entries']
             print 'Remedy response is: %s' % data
-            return data['values']
+            return map(operator.itemgetter('values'), data)
         else:
             print "get_entry error %s" % (response)
             self.throw_error(response)
