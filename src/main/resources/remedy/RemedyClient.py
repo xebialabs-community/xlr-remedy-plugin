@@ -115,7 +115,7 @@ class RemedyClient(object):
     # https://docs.bmc.com/docs/pages/releaseview.action?pageId=517036478#id-/entry/{formName}/{entryId}-Getsingleentry
     def get_change_request(self, form_name, change_id):
         # example: /api/arsys/v1/entry/CHG:ChangeInterface?q=%27Infrastructure%20Change%20ID%27%3d%22CRQ000000152848%22
-        remedy_api_url = '%s/%s?q=%27Infrastructure%20Change%20ID%27%3d%22%s%22' % (URI_PREFIX, form_name, change_id)
+        remedy_api_url = '%s/%s?q=%%27Infrastructure%%20Change%%20ID%%27%%3d%%22%s%%22' % (URI_PREFIX, form_name, change_id)
         print 'Remedy CR API is: %s' % remedy_api_url
         response = self.httpRequest.get(remedy_api_url, contentType='application/json; charset=utf-8', headers = self.headers)
 
