@@ -107,6 +107,7 @@ class RemedyClient(object):
 
         if response.getStatus() == RESULT_STATUS:
             data = json.loads(response.getResponse())
+            print 'Remedy response is: %s' % data
             return data['values']
         else:
             print "get_entry error %s" % (response)
@@ -121,6 +122,7 @@ class RemedyClient(object):
 
         if response.getStatus() == RESULT_STATUS:
             data = json.loads(response.getResponse())
+            print 'Remedy response is: %s' % data
             return data['values']
         else:
             print "get_entry error %s" % (response)
