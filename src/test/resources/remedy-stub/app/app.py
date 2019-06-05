@@ -46,10 +46,10 @@ def requires_auth(f):
 def index():
     return "Hello, World!"
 
-@app.route('/api/arsys/v1/entry/<formName>/<entryId>', methods=['GET'])
+@app.route('/api/arsys/v1/entry/<formName>/<infrastructureChangeID>', methods=['GET'])
 @requires_auth
-def getEntry(formName, entryId):
-    return getFile("ticket_000000000000103.json")
+def getEntry(formName, infrastructureChangeID):
+    return getFile("ticket_%s.json" % infrastructureChangeID)
 
 @app.route('/api/arsys/v1/entry/<formName>', methods=['GET'])
 @requires_auth
