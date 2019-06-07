@@ -51,6 +51,11 @@ def index():
 def getEntry(formName, entryId):
     return getFile("ticket_000000000000103.json")
 
+@app.route('/api/arsys/v1/entry/<formName>?q=%27Infrastructure%20Change%20ID%27%3d%<changeId>%22', methods=['GET'])
+@requires_auth
+def checkStatus(formName, changeId):
+    return getFile("ticket_CRQ000000152848.json")
+
 @app.route('/api/arsys/v1/entry/<formName>', methods=['GET'])
 @requires_auth
 def getEntries(formName):

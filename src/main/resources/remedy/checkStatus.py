@@ -8,7 +8,6 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-
 from remedy.RemedyClient import RemedyClient
 
 if remedyServer is None:
@@ -16,16 +15,22 @@ if remedyServer is None:
 
 client = RemedyClient.create_client(remedyServer, username, password)
 
-if matchChangId:
-    print "Matching Change Request ID: %s" % entryId
-    data = client.get_change_request(formName, entryId)
+if entryId is None or not entryId:
+    if changeId is None or not changeId:
+        sys.exit("Neither the Entry ID or Change Request ID were provided, please update one of the properties.\n")
+
+
+    print "Matching Change Request ID: %s" % changeId
+    data = client.get_change_request(formName, changeId)
+    if statusField not in data:
+        sys.exit("Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, changeId, str(data)))
 
 else:
     print "Matching Entry ID: %s" % entryId
     data = client.get_entry(formName, entryId)
 
-if statusField not in data:
-    sys.exit("Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, data['Request ID'], str(data)))
+    if statusField not in data:
+        sys.exit("Field with name [%s] not found in entry [%s], data [%s].\n" % (statusField, entryId, str(data)))
     
 status = data[statusField]
 print "Found %s in Remedy with status %s" % (entryId, status)

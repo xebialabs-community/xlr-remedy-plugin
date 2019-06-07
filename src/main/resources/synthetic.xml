@@ -77,9 +77,9 @@
         <property name="scriptLocation" default="remedy/checkStatus.py" hidden="true"/>
 
         <property name="formName" category="input" label="Form Name" required="true"/>
-        <property name="entryId" category="input" label='Entry/Change Id' required="true" description="Entry ID or Change Request ID"/>
-        <property name="matchChangId" category="input" required="false" kind="boolean" default="false" description="When checked Change ID will be matched insted of Entry ID" />
-        <property name="statusField" category="input" label="Status Field" default="Status" description='Status field for this form: For Entry "Status" for Chang Requests "Change Request Status"  '/>
+        <property name="entryId" category="input" label='Entry Id' required="true" description="Entry ID: leave blank if getting Change"/>
+        <property name="changeId" category="input" label='Change Id' required="true" description="Change Request ID: leave blank if getting Etnry"/>
+        <property name="statusField" category="input" label="Status Field" default="Status" description='Status field for this form: For Entry "Status" for Change Requests "Change Request Status"  '/>
 
         <property name="status" category="output"/>
     </type>
