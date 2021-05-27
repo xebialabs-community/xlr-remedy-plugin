@@ -12,6 +12,9 @@ import sys, urllib, operator
 import com.xhaus.jyson.JysonCodec as json
 from xlrelease.HttpRequest import HttpRequest
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 URI_PREFIX='/api/arsys/v1/entry'
 RESULT_STATUS          = 200
 RECORD_CREATED_STATUS  = 201

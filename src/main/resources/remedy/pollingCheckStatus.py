@@ -11,6 +11,9 @@
 import sys, time
 from remedy.RemedyClient import RemedyClient
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 if remedyServer is None:
     sys.exit("No server provided.")
 

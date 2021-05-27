@@ -10,6 +10,10 @@
 
 # This is used to test aconnection to the server
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 from remedy.RemedyClient import RemedyClient
 
 import remedy
